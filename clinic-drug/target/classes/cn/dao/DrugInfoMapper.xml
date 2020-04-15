@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC   "-//SS"
+        "http://mybsqtis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.dao.DrugInfoMapper">
+    <select id="getDrugInfo" resultType="cn.pojo.Drug">
+        select m.*,cr.rename
+        from `medicine` m,`clinic-recipe`.`recipetype` cr
+        <where>m.`mType`=cr.reid
+            <if test="mType != null and mType !=''">
+                and m.`mType`=#{mType}
+            </if>
+<!--            <if test="status != null and status !=''">-->
+<!--                and m.`status`=#{status}-->
+<!--            </if>-->
+<!--            <if test="createTime != null">-->
+<!--                and m.`createTime`=#{createTime}-->
+<!--            </if>-->
+        </where>
+<!--        and (m.`mName` like CONCAT('%',#{mName},'%')-->
+<!--        or m.`mNo` like CONCAT('%',#{mNo},'%')-->
+<!--        or m.`mFactory` like CONCAT('%',#{mFactory},'%'))-->
+    </select>
+
+</mapper>

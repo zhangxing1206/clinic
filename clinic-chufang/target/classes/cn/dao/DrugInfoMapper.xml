@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC   "-//SS"
+        "http://mybsqtis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.dao.DrugInfoMapper">
+    <select id="getDrugInfo" resultType="cn.pojo.Drug">
+        select m.*,me.typeName
+        from `medicine` m,`meditype` me
+        where m.`mType`=me.id
+        <if test="mType != null and mType !=''">
+            and m.`mType`=2
+        </if>
+        <if test="status != null and status !=''">
+            and m.`status`=1
+        </if>
+        <if test="createTime != null">
+            and m.`createTime`='2020-4-11'
+        </if>
+        and (m.`mName` like CONCAT('%','','%')
+        or m.`mNo` like CONCAT('%','','%')
+        or m.`mFactory` like CONCAT('%','','%'))
+    </select>
+
+</mapper>

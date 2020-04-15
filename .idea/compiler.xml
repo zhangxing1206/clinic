@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="oauth-client" />
+        <module name="clinicutils" />
+        <module name="oauthclient" />
+        <module name="clinic-chufang" />
+        <module name="clinicchufang" />
+        <module name="oauthresource" />
+        <module name="clinic-utils" />
+        <module name="clinicdata" />
+        <module name="oauth-resource" />
+        <module name="clinicdrug" />
+        <module name="oauth-server" />
+        <module name="oauthserver" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
